@@ -2,4 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: 11px;
+}
+
+@media (min-width: 1200px) {
+  .body {
+    font-size: 16px;
+  }
 }

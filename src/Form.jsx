@@ -32,10 +32,9 @@ class Form extends Component {
         className="Form"
         onSubmit={this.handleSubmit}
       >
-        <div className="Form__header">
-          <h1>Want to know which dog breed is the perfect one for you?</h1>
-          <h2>Just answer a few questions and you'll know!</h2>
-        </div>
+        <h1 className="Form__header">
+          Want to know which dog breed is the perfect one for you?
+        </h1>
         <Field
           label={questions.activity}
           value={answers.activity}

@@ -1,10 +1,11 @@
 .Form {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .Form__header {
-  margin-bottom: 50px
+  font-size: 1.5em;
+  margin: 20px 0;
 }
 
 .Form__submit_button {
@@ -15,11 +16,17 @@
   cursor: pointer;
   font-size: 1.5em;
   padding: 10px 40px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .Form__submit_button:hover {
   background-color:#fff;
   border: 2px solid #00a461;
   color: #00a461;
+}
+
+@media (min-width: 768px) {
+  .Form__header {
+    font-size: 2em;
+  }
 }

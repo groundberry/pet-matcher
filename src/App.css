@@ -1,7 +1,6 @@
 .App {
   color: #555;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
   text-align: center;
 }
 
@@ -15,16 +14,10 @@
   font-family: 'Caveat Brush', cursive;
   font-size: 4em;
   color: white;
-  margin: 0 0 50px;
-  padding: 30px;
+  margin: 0;
+  padding: 10px;
 }
 
 .App__body {
-  margin: 30px;
-}
-
-@media (min-width: 1200px) {
-  .App {
-    font-size: 16px;
-  }
+  margin: 20px 30px;
 }

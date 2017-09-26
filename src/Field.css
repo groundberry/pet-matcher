@@ -1,0 +1,13 @@
+.Field__label {
+  text-align: left;
+  clear: both;
+  float:left;
+}
+
+.Field__option {
+  border: 1px solid #ccc;
+  color: #555;
+  font-size: 1.25em;
+  margin-top: 5px;
+  width: 100%;
+}

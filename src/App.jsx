@@ -139,7 +139,7 @@ class App extends Component {
           time: '',
           size: 'small',
           hair: 'varied',
-          description: 'There are many different breeds of cats, including Abyssinian, Himalayan, Maine Coon, Manx, Persian, Scottish Fold, and Siamese, to name a few. The most familiar cats are the domestic shorthair and the domestic longhair, which are really mixtures of different breeds. Cat breeds differ in looks, coat length, and other characteristics but vary relatively little in size.',
+          description: 'There are many different breeds of cats, including Abyssinian, Himalayan, Maine Coon, Manx, Persian, Scottish Fold, and Siamese, to name a few. The most familiar cats are the domestic shorthair and the domestic longhair, which are really mixtures of different breeds.',
         },
       },
       questions: {
@@ -205,9 +205,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Pet Matcher</h2>
-        </div>
+        <h1 className="App__header"><i className="fa fa-paw App__paw" aria-hidden="true" />
+          Pet Matcher
+        </h1>
         <div className="App__body">
           {breed != null
             ? <Breed

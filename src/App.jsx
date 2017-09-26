@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Field from './Field';
+import { findMatchingBreed } from './utils';
+import Form from './Form';
 import './App.css';
 
 class App extends Component {
@@ -150,22 +151,53 @@ class App extends Component {
         activity: '',
         budget: '',
         space: '',
-
         time: '',
       },
       selectedBreed: null,
     };
+
+    this.handleChangeQuestion = this.handleChangeQuestion.bind(this);
+    this.handleSubmitAnswers = this.handleSubmitAnswers.bind(this);
+  }
+
+  handleChangeQuestion(label, value) {
+    this.setState(prevState => ({
+      answers: {
+        ...prevState.answers,
+        [label]: value,
+      },
+    }));
+  }
+
+  handleSubmitAnswers() {
+    const { answers, breeds } = this.state;
+    let result = null;
+
+    if (findMatchingBreed(breeds, answers) !== null) {
+      result = findMatchingBreed(breeds, answers);
+    } else {
+      result = 'cat';
+    }
+
+    this.setState(prevState => ({
+      ...prevState,
+      selectedBreed: result,
+    }));
   }
 
   render() {
+    const { questions, answers } = this.state;
+
     return (
       <div className="App">
         <div className="App-header">
           <h2>Pet Matcher</h2>
         </div>
-        <Field
-          label={this.state.questions.activity}
-          value={this.state.answers.activity}
+        <Form
+          questions={questions}
+          answers={answers}
+          onChange={this.handleChangeQuestion}
+          onSubmit={this.handleSubmitAnswers}
         />
       </div>
     );

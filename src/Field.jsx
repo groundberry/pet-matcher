@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Field.css';
 
 const Field = (props) => {
-  const { label, value } = props;
+  const { label, value, onChange } = props;
 
   return (
     <label>
@@ -13,6 +13,7 @@ const Field = (props) => {
       <select
         className="Field__option"
         value={value}
+        onChange={onChange}
       >
         <option value="">Select an option</option>
         <option value="high">A lot!</option>
@@ -26,6 +27,7 @@ const Field = (props) => {
 Field.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Field;

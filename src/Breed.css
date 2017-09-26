@@ -1,0 +1,43 @@
+.Breed {
+  border: 1px solid #999;
+  border-radius: 5px;
+  max-width: 90%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.Breed__image {
+  border-radius: 30px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Breed__description {
+  text-align: left;
+  margin: 30px auto;
+  width: 90%;
+}
+
+.Breed__search_button {
+  background-color: #fff;
+  border: 2px solid #00a461;
+  border-radius: 5px;
+  color: #00a461;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 40px;
+  margin-top: 50px;
+}
+
+.Breed__search_button:hover {
+  background-color:#00a461;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+
+@media (min-width: 768px) {
+  .Breed {
+    max-width: 700px;
+  }
+}

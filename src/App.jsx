@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { findMatchingBreed } from './utils';
 import Form from './Form';
+import Breed from './Breed';
 import './App.css';
 
 class App extends Component {
@@ -158,6 +159,7 @@ class App extends Component {
 
     this.handleChangeQuestion = this.handleChangeQuestion.bind(this);
     this.handleSubmitAnswers = this.handleSubmitAnswers.bind(this);
+    this.handleClickNewSearch = this.handleClickNewSearch.bind(this);
   }
 
   handleChangeQuestion(label, value) {
@@ -185,20 +187,41 @@ class App extends Component {
     }));
   }
 
+  handleClickNewSearch() {
+    this.setState({
+      answers: {
+        activity: '',
+        budget: '',
+        space: '',
+        time: '',
+      },
+      selectedBreed: null,
+    });
+  }
+
   render() {
     const { questions, answers } = this.state;
+    const breed = this.state.breeds[this.state.selectedBreed];
 
     return (
       <div className="App">
         <div className="App-header">
           <h2>Pet Matcher</h2>
         </div>
-        <Form
-          questions={questions}
-          answers={answers}
-          onChange={this.handleChangeQuestion}
-          onSubmit={this.handleSubmitAnswers}
-        />
+        <div className="App__body">
+          {breed != null
+            ? <Breed
+              breed={breed}
+              onClick={this.handleClickNewSearch}
+            />
+            : <Form
+              questions={questions}
+              answers={answers}
+              onChange={this.handleChangeQuestion}
+              onSubmit={this.handleSubmitAnswers}
+            />
+          }
+        </div>
       </div>
     );
   }
